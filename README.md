@@ -23,3 +23,4 @@ run the `forge script script/DeployOBC.s.sol:DeployOBC --rpc-url SEPOLIA_RPC_URL
 ## on sepolia
 
 This contract deployed at https://sepolia.etherscan.io/address/0xed67aa719b638bbda8ae50071ca57694c9f1becd# openbuild-task-erc20
+# openbuild-task-erc20
