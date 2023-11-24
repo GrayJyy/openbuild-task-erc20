@@ -1,66 +1,25 @@
-## Foundry
+# openbuild Task1
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
+1. Step1: config your own env file
 ```shell
-$ forge build
+SEPOLIA_RPC_URL=xxx
+PRIVATE_KEY=xxx
+ETHERSCAN_API_KEY=xxx
 ```
 
-### Test
+2. Step2: deploy this contract
 
-```shell
-$ forge test
-```
+If you use `forge script`,please run `source .env` first
+If you use `make deploy`,please run `npm i -g make` first,then check the version of `make`(`make --version`)
 
-### Format
+>If you wanna deploy on the local chain
 
-```shell
-$ forge fmt
-```
+run the `forge script script/DeployOBC.s.sol:DeployOBC` or `make deploy`
 
-### Gas Snapshots
+>If you wanna deploy on the test chain like `sepolia`
 
-```shell
-$ forge snapshot
-```
+run the `forge script script/DeployOBC.s.sol:DeployOBC --rpc-url SEPOLIA_RPC_URL --private-key PRIVATE_KEY --broadcast` or `make deploy ARGS="--network sepolia"`
 
-### Anvil
+## on sepolia
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This contract deployed at https://sepolia.etherscan.io/address/0xed67aa719b638bbda8ae50071ca57694c9f1becd# openbuild-task-erc20
